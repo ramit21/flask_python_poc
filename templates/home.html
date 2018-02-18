@@ -1,22 +1,11 @@
-<!doctype html>
-<html>
-    <head>
-    <title>MyFlaskApp</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-    </head>
-    <body>
-        <center>
-            <a href="new_post">Add a new post</a>
-            
-            {% for post in posts %}
-                <h1> {{post.title}} </h1>
-                <h4>Posted at: {{ post.date.strftime('%m/%d/%Y at %G:%I%p') }}</h4> 
-                <p>{{post.text}}</p>
-                <br></br>
-            {% endfor %}
-            
-        </center>
-        <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
-    </body>
-
-</html>
+    {% extends '_layout.html' %}
+    {% block body %}
+    <a href="new_post">Add a new post</a>
+    {% for post in posts %}
+        <h1> {{post.title}} </h1>
+        <h4>Posted at: {{ post.date.strftime('%m/%d/%Y at %G:%I%p') }}</h4> 
+        <p>{{post.text}}</p>
+        <br></br>
+    {% endfor %}
+    {% endblock %}
+   
