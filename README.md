@@ -18,7 +18,7 @@ Flask doesn’t make decisions for you.
 By contrast, Ruby on Rails and Django make assumtions on how you want to interact with the databases.  
 
 ### Advantages:
-Don’t have to worry about understndinf features you don’t get.  
+Don’t have to worry about understnding features you don’t get.  
 Easy to add in extensions for things that you want.  
 Templating gives dynamic html pages  
 
