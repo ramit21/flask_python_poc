@@ -17,16 +17,17 @@ def before_request():
     
 @app.teardown_request   #app.after_request does not invoke in case of exception, but teardown does
 def teardown_request(exception):
-    print('Teardown: Closing DB [%s]'.format(exception))
+    print(f'Teardown: Closing DB [{exception}]')
     db.close()
 
 @app.route('/hello/<name>')
 def hello_name(name):
-    return 'Hello %s' % name
+    print(f'name= {name}')
+    return f'Hello {name}' #Python f-strings are more efficient than legacy "%s" % name or str.format()
 
 @app.route('/double/<int:num>')
 def double(num):
-    return '%d' % (2*num)
+    return f'{2*num}'
 
 @app.route('/')
 def home():

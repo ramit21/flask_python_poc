@@ -2,8 +2,9 @@
 Flask micro service with Peewee
 
 
-Steps to run POC:  
-To start server, just execute the app.py:  
+Steps to run POC:
+1. pip install flask peewee
+2. Start server, just execute the app.py:  
 >> python app.py  
 
 http://localhost:5000 -> default route  
