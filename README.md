@@ -37,7 +37,17 @@ Flask uses two main contexts to manage data during a request lifecycle:
 | Context Type         | Purpose                                               | Key Objects                  |
 |----------------------|-------------------------------------------------------|------------------------------|
 | Application Context  | Holds app-level data and configuration                | `current_app`, `g`           |
-| Request Context      | Holds request-specific data for each client interaction | `request`, `session`, `g`   |
+| Request Context      | Holds request-specific data for each client interaction | `request`, `session`, `g`  |
+
+The g in Request Context is the one shared with app context.
+
+g: A general-purpose namespace for storing data during the app context (e.g., DB connections)
+
+current_app: Refers to the app handling the request.
+
+request: incoming request specific data
+
+session: a dict on user session variables.
 
 Context Lifecycle: 
 ```
