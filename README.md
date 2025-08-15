@@ -56,6 +56,9 @@ View function executes
 Request ends → Request context popped → App context popped
 ```
 
+### Requirements.tx and Docker
+https://www.youtube.com/watch?v=jZB6OaHvPEQ&list=PLMOobVGrchXN5tKYdyx-d2OwwgxJuqDVH&index=8
+
 ## Reources  
 Flask:  http://flask.pocoo.org/docs/0.12/  
 Peewee: http://docs.peewee-orm.com/en/latest/  
