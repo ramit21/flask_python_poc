@@ -33,6 +33,7 @@ def double(num):
 def home():
     print('Render home page with saved posts')
     return render_template('home.html', posts = Post.select().order_by(Post.date.desc()))
+    #return None  # Default route handler; no content returned
 
 @app.route('/new_post/')
 def new_post():
@@ -48,7 +49,10 @@ def create_post():
     #Redirect to funciton named homeabove. Can directly give hardcoded url as well
     return redirect(url_for('home'))
 
-#return None from default route and see debug=True output. Should not be used in prod, 
-#as client can can execute ython script directly in debug mode 
+# ⚠️ Warning: Do not use debug=True in production.
+# When enabled, any unhandled exception will expose the full error stack trace in the browser,
+# which can leak sensitive implementation details.
+# Additionally, debug mode allows clients to execute arbitrary Python code via the browser,
+# posing a serious security risk.
 if __name__ == '__main__':
     app.run(host='localhost', port=5000, debug=True)
