@@ -31,6 +31,19 @@ Less standardised code (not enough help from net as compared to more commonly us
 To install Peewee: >> sudo pip install peewee  
 To use peewee module in code:  from peewee import *  
 
+### Flask contexts
+Flask uses two main contexts to manage data during a request lifecycle:
+|Context Type | Purpose| Key Objects |
+|Application Context | Holds app-level data and configuration| current_app, g |
+|Request Context | Holds request-specific data for each client interaction | request, session, g (shared with app context) |
+
+Context Lifecycle: 
+```
+Request received → App context pushed → Request context pushed
+View function executes
+Request ends → Request context popped → App context popped
+```
+
 ## Reources  
 Flask:  http://flask.pocoo.org/docs/0.12/  
 Peewee: http://docs.peewee-orm.com/en/latest/  
